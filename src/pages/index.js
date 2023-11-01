@@ -43,27 +43,26 @@ export default function Home() {
     schedules.map(async (res) => {
       console.log(res)
       generateNewSchedule(res, prompt).then(async (res) => {
-        const reason = await Promise.all(res.schedule.map(async (r, i) => {
-          const response = await fetch('api/generate', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-              prompt: `I am a ${prompt}, give a detailed reason why I should attend ${r.title} from the infomation given?`,
-              ibmKey: `${ibmKey}`
-            })
-          })
-          const data = await response.json();
-          console.log(data);
-          const reason = data.data?.generated_text;
-          res.schedule[i] = { ...res.schedule[i], reason: reason }
-          return reason;
-          // res.schedule[i] = { ...res.schedule[i], reason: reason }
-        }))
+        // const reason = await Promise.all(res.schedule.map(async (r, i) => {
+        //   const response = await fetch('api/generate', {
+        //     method: 'POST',
+        //     headers: {
+        //       'Content-Type': 'application/json'
+        //     },
+        //     body: JSON.stringify({
+        //       prompt: `I am a ${prompt}, give a detailed reason why I should attend ${r.title} from the infomation given?`,
+        //       ibmKey: `${ibmKey}`
+        //     })
+        //   })
+        //   const data = await response.json();
+        //   console.log(data);
+        //   const reason = data.data?.generated_text;
+        //   res.schedule[i] = { ...res.schedule[i], reason: reason }
+        //   return reason;
+        //   // res.schedule[i] = { ...res.schedule[i], reason: reason }
+        // }))
 
 
-        console.log(reason)
         console.log(res);
 
 
@@ -166,7 +165,7 @@ export default function Home() {
                 type="search"
                 id="search-query"
                 class="block p-2.5 w-full z-20 text-sm text-gray-900 bg-gray-50 rounded-r-lg border-l-gray-50 border-l-2 border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-l-gray-700  dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-blue-500"
-                placeholder="I am a software engineer and I need a plan..."
+                placeholder="women looking for stem events ..."
                 required
                 value={prompt}
                 onChange={(e) => {
