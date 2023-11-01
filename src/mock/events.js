@@ -89,20 +89,20 @@ export const events = [
         description:
           "Unwind and socialize at Off The Clock: A Social Prefects Happiest Hour.",
       },
-      {
-        title: "In the Mix: Salesforce + Uncle Nearest",
-        time: "4:00 PM - 8:00 PM",
-        speaker: [],
-        description:
-          "Explore the mix of technology and whiskey at In the Mix: Salesforce + Uncle Nearest.",
-      },
-      {
-        title: "Trip with Tech: The Ultimate Hangout with Tripadvisor Group",
-        time: "4:00 PM - 9:00 PM",
-        speaker: [],
-        description:
-          "Embark on a journey with Tripadvisor Group at the Ultimate Hangout event.",
-      },
+      // {
+      //   title: "In the Mix: Salesforce + Uncle Nearest",
+      //   time: "4:00 PM - 8:00 PM",
+      //   speaker: [],
+      //   description:
+      //     "Explore the mix of technology and whiskey at In the Mix: Salesforce + Uncle Nearest.",
+      // },
+      // {
+      //   title: "Trip with Tech: The Ultimate Hangout with Tripadvisor Group",
+      //   time: "4:00 PM - 9:00 PM",
+      //   speaker: [],
+      //   description:
+      //     "Embark on a journey with Tripadvisor Group at the Ultimate Hangout event.",
+      // },
       {
         title: "Unwine101 Presents: Unwine Afrotech Karaoke Happy Hour",
         time: "4:00 PM - 8:00 PM",
@@ -110,13 +110,13 @@ export const events = [
         description:
           "Unwind and sing your heart out at Unwine101's Karaoke Happy Hour.",
       },
-      {
-        title: "Brunch Haus",
-        time: "5:00 PM",
-        speaker: [],
-        description:
-          "Enjoy a delightful brunch at Brunch Haus, hosted by Brown Skin Brunchin'.",
-      },
+      // {
+      //   title: "Brunch Haus",
+      //   time: "5:00 PM",
+      //   speaker: [],
+      //   description:
+      //     "Enjoy a delightful brunch at Brunch Haus, hosted by Brown Skin Brunchin'.",
+      // },
       {
         title: "Fun With Friends Block Party (AfroTech)",
         time: "5:00 PM - 10:00 PM",
@@ -138,19 +138,19 @@ export const events = [
         description:
           "Join the AfroTech Mixer at Camp Roblox, hosted by Roblox.",
       },
-      {
-        title: "Pass the Aux Party AFROTECH",
-        time: "6:00 PM - 9:00 PM",
-        speaker: [],
-        description:
-          "It's time to pass the aux cord at the Pass the Aux Party hosted by Blavity House Party.",
-      },
-      {
-        title: "Afrotech &FRNDS",
-        time: "6:00 PM - 12:00 AM",
-        speaker: [],
-        description: "Connect with new friends at Afrotech &FRNDS event.",
-      },
+      // {
+      //   title: "Pass the Aux Party AFROTECH",
+      //   time: "6:00 PM - 9:00 PM",
+      //   speaker: [],
+      //   description:
+      //     "It's time to pass the aux cord at the Pass the Aux Party hosted by Blavity House Party.",
+      // },
+      // {
+      //   title: "Afrotech &FRNDS",
+      //   time: "6:00 PM - 12:00 AM",
+      //   speaker: [],
+      //   description: "Connect with new friends at Afrotech &FRNDS event.",
+      // },
       {
         title: "Afrolituation x Discover Gidi (Afrotech Weekend)",
         time: "10:00 PM - 2:00 AM",

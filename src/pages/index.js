@@ -33,7 +33,7 @@ export default function Home() {
   const [selectedEvent, setSelectedEvent] = useState();
   const [ibmKey, setIbmKey] = useState('');
   const runGeneration = async () => {
-    if (!prompt || !ibmKey) return;
+    if (!prompt) return;
     setSchedules([])
     setLoading(true);
     // watsonExample().then((res)=>{
@@ -43,7 +43,6 @@ export default function Home() {
     schedules.map(async (res) => {
       console.log(res)
       generateNewSchedule(res, prompt).then(async (res) => {
-
         const reason = await Promise.all(res.schedule.map(async (r, i) => {
           const response = await fetch('api/generate', {
             method: 'POST',
@@ -62,20 +61,21 @@ export default function Home() {
           return reason;
           // res.schedule[i] = { ...res.schedule[i], reason: reason }
         }))
+
+
         console.log(reason)
+        console.log(res);
+
+
         setSchedules(prev => [...prev, res]);
+
         setLoading(false);
-
-
         fire();
       })
 
 
     })
-
     console.log(schedules);
-
-
   }
 
   const refAnimationInstance = useRef(null);
@@ -127,6 +127,12 @@ export default function Home() {
     setSchedules(events);
   }, [])
 
+
+  useEffect(() => {
+    // Sort the data array by the 'age' property
+    schedules.sort((a, b) => new Date(a.date) - new Date(b.date));
+  }, [schedules]);
+
   return (
     <div className='mx-auto max-w-5xl py-32 sm:py-18 lg:py-56'>
       <header class="absolute inset-x-0 top-0 z-50">
@@ -142,7 +148,7 @@ export default function Home() {
       <div>
         <div className="text-center">
           <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
-            RoadmapX 🗺️
+            FOMO 
           </h1>
           <p className="my-6 text-lg leading-8 text-gray-600">
             {" "}
@@ -167,8 +173,8 @@ export default function Home() {
                   setPrompt(e.target.value);
                 }}
               />
-              <Typography className='text-black text-center text-sm'>       
-                 please be sure to add your career and goals above and your ibmKey on the bottom.
+              <Typography className='text-black text-center text-sm'>
+                please be sure to add your career and goals above and your ibmKey on the bottom.
               </Typography>
             </div>
           </div>
@@ -202,15 +208,15 @@ export default function Home() {
             onClick={runGeneration}
             className="cursor-pointer rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
           >
-            
+
             {loading ? "Loading..." : "Optimize"}
-            
+
           </button>
           <button
-            onClick={()=>{setSchedules(events)}}
+            onClick={() => { setSchedules(events) }}
             className="cursor-pointer rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
           >
-            { "Start Over"}
+            {"Start Over"}
           </button>
           {/* <a
             href="https://curatork12.com/"
@@ -318,9 +324,9 @@ export default function Home() {
             }}
           />
 
-<Typography className='text-black text-center text-sm'>       
-                Team BLACK: Talbert Herndon, Tiarra McCormick, Lauren Rommeswinkel, and Chaste Christopher Inegbedion
-              </Typography>
+          <Typography className='text-black text-center text-sm'>
+            Team BLACK: Talbert Herndon, Tiarra McCormick, Lauren Rommeswinkel, and Chaste Christopher Inegbedion
+          </Typography>
         </div>
       </div>
 

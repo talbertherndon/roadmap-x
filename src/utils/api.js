@@ -23,7 +23,7 @@ const openai = new OpenAI({
 });
 
 export async function generateNewSchedule(user_input, context) {
-    console.log("OLD:", user_input, context);
+    //console.log("OLD:", user_input, context);
     try {
         const outputParser = StructuredOutputParser.fromZodSchema(
             z
@@ -59,13 +59,13 @@ export async function generateNewSchedule(user_input, context) {
         });
 
         const result = await answerFormattingChain.call({
-            query: `Given the provided schedule data (JSON): ${JSON.stringify(
+            query: `Provided with the following JSON schedule data: ${JSON.stringify(
                 user_input
-            )}, Let's optimize the schedule based on the user's background (${context}) by removing any events with overlapping time slots. Please return the updated JSON after the optimization.`,
+                )}, your task is to optimize the schedule based on the user's background (${context}). Your goal is to identify and retain the best event for each day while removing any events with overlapping time slots. Please provide the updated JSON schedule as your output`,
         });
 
         const resource = result.records;
-        console.log(resource);
+        //console.log(resource);
         return resource;
     } catch (e) {
         throw e;
