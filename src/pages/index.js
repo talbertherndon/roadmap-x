@@ -35,7 +35,7 @@ export default function Home() {
   const runGeneration = async () => {
     if (!prompt || !ibmKey) return;
     setSchedules([])
-    // setLoading(true);
+    setLoading(true);
     // watsonExample().then((res)=>{
     //   console.log(res)
 
