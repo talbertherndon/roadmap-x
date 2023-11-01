@@ -168,8 +168,9 @@ export default function Home() {
                   setPrompt(e.target.value);
                 }}
               />
-              <Typography className='text-black text-center text-sm'>          please be sure to add your career and goals above and your ibmKey on the bottom.
-</Typography>
+              <Typography className='text-black text-center text-sm'>       
+                 please be sure to add your career and goals above and your ibmKey on the bottom.
+              </Typography>
             </div>
           </div>
           {/* <div className="relative flex w-full gap-2 ">
@@ -309,6 +310,10 @@ export default function Home() {
               setIbmKey(e.target.value);
             }}
           />
+
+<Typography className='text-black text-center text-sm'>       
+                Team BLACK: Talbert Herndon, Tiarra McCormick, Lauren Rommeswinkel, and Chaste Christopher Inegbedion
+              </Typography>
         </div>
       </div>
 
